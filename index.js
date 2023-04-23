@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 const otakudesu = require("./routes/otakudesu/otakudesu");
 const animeIndo = require("./routes/animeIndo/animeIndo");
