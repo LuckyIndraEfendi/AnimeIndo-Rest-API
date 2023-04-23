@@ -1,8 +1,5 @@
 const express = require("express");
-const axios = require("axios");
-const puppeteer = require("puppeteer");
 const router = express.Router();
-
 const request = require("request");
 const cheerio = require("cheerio");
 
@@ -62,7 +59,10 @@ const getOngoingAnime = async (req, res) => {
         data: datas,
       });
     } else {
-      console.log("Terjadi kesalahan saat mengambil data.");
+      res.status(500).send({
+        status: "error",
+        message: "Internal Server Error",
+      });
     }
   });
 };
@@ -134,7 +134,10 @@ const getScheeduleAnime = async (req, res) => {
         data: datas,
       });
     } else {
-      console.log("Terjadi kesalahan saat mengambil data.");
+      res.status(500).send({
+        status: "error",
+        message: "Internal Server Error",
+      });
     }
   });
 };
@@ -177,7 +180,10 @@ const getPropertiesAnime = async (req, res) => {
         data: datas,
       });
     } else {
-      console.log("Terjadi kesalahan saat mengambil data.");
+      res.status(500).send({
+        status: "error",
+        message: "Internal Server Error",
+      });
     }
   });
 };
@@ -246,7 +252,10 @@ const getPropertiesGenre = async (req, res) => {
         data: datas,
       });
     } else {
-      console.log("Terjadi kesalahan saat mengambil data.");
+      res.status(500).send({
+        status: "error",
+        message: "Internal Server Error",
+      });
     }
   });
 };
@@ -412,7 +421,10 @@ const getDetailsAnime = async (req, res) => {
         data: datas,
       });
     } else {
-      console.log("Terjadi kesalahan saat mengambil data.");
+      res.status(500).send({
+        status: "error",
+        message: "Internal Server Error",
+      });
     }
   });
 };
@@ -479,7 +491,10 @@ const getSearchAnime = async (req, res) => {
         data: datas,
       });
     } else {
-      console.log("Terjadi kesalahan saat mengambil data.");
+      res.status(500).send({
+        status: "error",
+        message: "Internal Server Error",
+      });
     }
   });
 };
