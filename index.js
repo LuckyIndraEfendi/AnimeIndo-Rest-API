@@ -12,7 +12,7 @@ const corsOptions = {
   origin: "http://localhost:5173", // Ganti dengan URL frontend Anda
   credentials: true, // Mengizinkan pengiriman cookie melalui CORS
 };
-app.use(useragent.express());
+
 app.use(cors(corsOptions));
 // app.use("/otakudesu", otakudesu);
 // app.use("/animeindo", animeIndo);
