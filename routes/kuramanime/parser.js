@@ -542,9 +542,8 @@ const getAnimeEpisode = (req, res) => {
         data: datas,
         isActive: $("#animeEpisodes > a.active-ep.ep-button").attr("class"),
         episodeActive: $("#animeEpisodes > a.active-ep.ep-button")
-          .text()
-          .replace(/\s+/g, " ")
-          .trim(),
+           .text()
+          .match(/\d+/)[0],
         episodeUrl: videoSource,
       });
     })
