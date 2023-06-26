@@ -434,7 +434,6 @@ const getSearchAnime = async (req, res) => {
         status: "success",
         statusCode: 200,
         genreName: req.params.genreName,
-        // properties: req.query.genre_type || "genre",
         data: datas,
       });
     } else {
@@ -542,7 +541,7 @@ const getAnimeEpisode = (req, res) => {
         data: datas,
         isActive: $("#animeEpisodes > a.active-ep.ep-button").attr("class"),
         episodeActive: $("#animeEpisodes > a.active-ep.ep-button")
-           .text()
+          .text()
           .match(/\d+/)[0],
         episodeUrl: videoSource,
       });
