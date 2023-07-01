@@ -2,10 +2,10 @@ const axios = require("axios");
 
 const request = require("request");
 const cheerio = require("cheerio");
-
+const baseURL = "https://kuramanime.art"
 const getOngoingAnime = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/anime/ongoing?order_by=${
+    url: `${baseURL}/anime/ongoing?order_by=${
       req.query.order_by || "latest"
     }&page=${req.query.page || 1}`,
   };
@@ -50,7 +50,7 @@ const getOngoingAnime = async (req, res) => {
 
 const getScheeduleAnime = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/schedule?scheduled_day=${
+    url: `${baseURL}/schedule?scheduled_day=${
       req.query.scheduled_day || "all"
     }&page=${req.query.page || 1}`,
     headers: {
@@ -77,7 +77,7 @@ const getScheeduleAnime = async (req, res) => {
             ? $(e)
                 .find("div > h5 > a")
                 .attr("href")
-                .replace(/^https?:\/\/kuramanime\.top/i, "")
+                .replace(`${baseURL}`, "")
             : "",
           image: $(e).find("a > div").attr("data-setbg"),
           days: $(e)
@@ -115,7 +115,7 @@ const getScheeduleAnime = async (req, res) => {
 
 const getPropertiesAnime = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/properties/genre?genre_type=${req.query.genre_type}&page=1`,
+    url: `${baseURL}/properties/genre?genre_type=${req.query.genre_type}&page=1`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
@@ -156,7 +156,7 @@ const getPropertiesAnime = async (req, res) => {
 
 const getPropertiesGenre = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/properties/genre/${
+    url: `${baseURL}/properties/genre/${
       req.params.genreName
     }?order_by=${req.query.order_by || "ascending"}&page=${
       req.query.page || 1
@@ -184,7 +184,7 @@ const getPropertiesGenre = async (req, res) => {
             ? $(e)
                 .find("div > h5 > a")
                 .attr("href")
-                .replace(/^https?:\/\/kuramanime\.top/i, "")
+                .replace(`${baseURL}`, "")
             : "",
           ratings: $(e)
             .find(" a > div > div.ep > span")
@@ -209,7 +209,7 @@ const getPropertiesGenre = async (req, res) => {
 
 const getDetailsAnime = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/anime/${req.params.animeId}/${req.params.animeIdTitle}`,
+    url: `${baseURL}/anime/${req.params.animeId}/${req.params.animeIdTitle}`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
@@ -238,7 +238,7 @@ const getDetailsAnime = async (req, res) => {
         const eps = $(e)
           .attr("href")
           .trim()
-          .replace("https://kuramanime.top", "");
+          .replace(`${baseURL}`, "");
         const epsTitle = $(e).text().replace(/\s+/g, " ");
         episodeArray.push({
           episodeId: eps,
@@ -390,7 +390,7 @@ const getDetailsAnime = async (req, res) => {
 
 const getSearchAnime = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/anime?&search=${req.query.keywq}&order_by=${
+    url: `${baseURL}/anime?&search=${req.query.keywq}&order_by=${
       req.query.order_by || "oldest"
     }&page=${req.query.page || 1}`,
     headers: {
@@ -444,7 +444,7 @@ const getSearchAnime = async (req, res) => {
 
 const getRecentRelease = async (req, res) => {
   const options = {
-    url: `https://kuramanime.top/properties/season/spring-2023?order_by=${
+    url: `${baseURL}/properties/season/spring-2023?order_by=${
       req.query.order_by || "popular"
     }`,
     headers: {
@@ -470,7 +470,7 @@ const getRecentRelease = async (req, res) => {
             ? $(e)
                 .find("div > h5 > a")
                 .attr("href")
-                .replace(/^https?:\/\/kuramanime\.top/i, "")
+                .replace(`${baseURL}`, "")
             : "",
           ratings: $(e)
             .find(" a > div > div.ep > span")
@@ -499,7 +499,7 @@ const getRecentRelease = async (req, res) => {
 
 const getAnimeEpisode = (req, res) => {
   const options = {
-    url: `https://kuramanime.top/anime/${req.params.animeName}/${req.params.animeId}/episode/${req.params.episodeId}?activate_stream=1`,
+    url: `${baseURL}/anime/${req.params.animeName}/${req.params.animeId}/episode/${req.params.episodeId}?activate_stream=1`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54",
@@ -531,7 +531,7 @@ const getAnimeEpisode = (req, res) => {
           episodeId: $(el).attr("href")
             ? $(el)
                 .attr("href")
-                .replace(/^https?:\/\/kuramanime\.top/i, "")
+                .replace(`${baseURL}`, "")
             : "",
         });
       });
