@@ -24,7 +24,7 @@ const getOngoingAnime = async (req, res) => {
             ? $(e)
                 .find("div > h5 > a")
                 .attr("href")
-                .replace(/^https?:\/\/kuramanime\.top/i, "")
+                .replace(`${baseURL}`, "")
             : "",
           image: $(e).find("a > div").attr("data-setbg"),
           episode: $(e)
