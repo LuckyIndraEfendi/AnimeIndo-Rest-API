@@ -416,7 +416,7 @@ const getSearchAnime = async (req, res) => {
             ? $(e)
                 .find("div > h5 > a")
                 .attr("href")
-                .replace(/^https?:\/\/kuramanime\.top/i, "")
+                .replace(`${baseURL}`, "")
             : "",
           ratings: $(e)
             .find(" a > div > div.ep > span")
