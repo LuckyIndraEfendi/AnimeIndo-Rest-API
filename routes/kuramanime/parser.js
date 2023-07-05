@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const request = require("request");
 const cheerio = require("cheerio");
-const baseURL = "https://kuramanime.art"
+const baseURL = "https://kuramanime.xyz"
 const getOngoingAnime = async (req, res) => {
   const options = {
     url: `${baseURL}/anime/ongoing?order_by=${
