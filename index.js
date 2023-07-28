@@ -15,7 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 // app.use("/otakudesu", otakudesu);
-// app.use("/animeindo", animeIndo);
+app.use("/animeindo", animeIndo);
 app.use("/luckyanime", kuramanime);
 
 app.get("/", (req, res) => {
