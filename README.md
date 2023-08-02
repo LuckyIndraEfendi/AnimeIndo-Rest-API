@@ -13,7 +13,7 @@
     <a href="#routes"><strong>Explore the api »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=bug&template=bug-report.yml">Bug report</a>
+    <a href="https://github.com/LuckyIndraEfendi/AnimeIndo-Rest-API/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=Report Problem">Bug report</a>
     ·
     <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=enhancement&template=feature-request.md">Feature request</a>
   </p>
