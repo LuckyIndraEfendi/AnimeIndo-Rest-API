@@ -8,7 +8,7 @@
   <h3 align="center">AnimeIndo-Rest-API</h3>
 
   <p align="center">
-    <samp>A free anime app restful API serving anime from <a href="https://luckyanimeku.netlify.app/">LuckyAnime</a></samp>
+    <samp>A free anime app restful API serving anime from <a href="http://kyouka-live.web.app/">LuckyAnime</a></samp>
     <br />
     <a href="#routes"><strong>Explore the api »</strong></a>
     <br />
