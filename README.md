@@ -36,6 +36,8 @@
   </p>
 </p>
 
+## Project Using This AnimeIndo API
+See Project Overview : <a href="http://kyouka-live.web.app/">KyoukaAnime.live</a>
 
 ## Installation
 Run the following command to clone the repository, and install the dependencies:
