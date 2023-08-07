@@ -514,6 +514,9 @@ const getAnimeEpisode = (req, res) => {
 
       let datas = [];
       let videoSource = []; // Undefined or empty
+      let videoTitle = $("#episodeTitle").text();
+      let currentUrl = $("#currentUrl").val();
+      let animeId = currentUrl.split(baseURL)[1].split("/episode")[0];
 
       $("#player")
         .find("source")
@@ -538,6 +541,8 @@ const getAnimeEpisode = (req, res) => {
 
       res.status(200).json({
         statusbar: "success",
+        animeId: animeId,
+        animeTitle: videoTitle,
         data: datas,
         isActive: $("#animeEpisodes > a.active-ep.ep-button").attr("class"),
         episodeActive: $("#animeEpisodes > a.active-ep.ep-button")
