@@ -20,7 +20,7 @@ const getOngoingAnime = async (req, res) => {
       element.each((i, e) =>
         datas.push({
           title: $(e).find("div > h5 > a").text(),
-          animeId: $(e).find("div > h5 > a").attr("href")
+          episodeId: $(e).find("div > h5 > a").attr("href")
             ? $(e)
                 .find("div > h5 > a")
                 .attr("href")
