@@ -1,9 +1,12 @@
 # ⚠️⚠️⚠️ This API Still Maintenance, we will back soon
 
 
-
+## Oour API Migrates to v2
+- <a href="https://github.com/LuckyIndraEfendi/AnimeIndo-RestAPI-V2">
+   Checkout Here
+  </a>
+  
 # AnimeIndo-Rest-API
-
 <p align="center">
   <a href="https://github.com/LuckyIndraEfendi">
     <img src="https://avatars.githubusercontent.com/u/90430786?v=4" alt="Logo" width="150" >
